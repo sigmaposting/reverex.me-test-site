@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rainbow Calculator</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #f0f5ff; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #calculator {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 240px;
+    }
+    #display { 
+      width: 100%;
+      height: 60px; 
+      margin-bottom: 15px; 
+      font-size: 28px; 
+      text-align: right; 
+      padding: 0 10px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    button {
+      height: 50px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    button:active {
+      transform: scale(0.95);
+    }
+    /* Rainbow buttons! */
+    .number { 
+      background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+      color: #333;
+    }
+    .operator { 
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+      color: white;
+    }
+    #clear { 
+      background: linear-gradient(135deg, #ff9a9e 0%, #fbc2eb 100%);
+      color: white;
+    }
+    #equals { 
+      background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+      color: white;
+      grid-column: span 2;
+    }
+    #decimal {
+      background: linear-gradient(135deg, #a6c1ee 0%, #fbc2eb 100%);
+    }
+  </style>
+</head>
+<body>
+  <div id="calculator">
+    <input type="text" id="display" disabled>
+    <div class="buttons">
+      <button class="number" onclick="appendToDisplay('7')">7</button>
+      <button class="number" onclick="appendToDisplay('8')">8</button>
+      <button class="number" onclick="appendToDisplay('9')">9</button>
+      <button class="operator" onclick="appendToDisplay('/')">÷</button>
+      
+      <button class="number" onclick="appendToDisplay('4')">4</button>
+      <button class="number" onclick="appendToDisplay('5')">5</button>
+      <button class="number" onclick="appendToDisplay('6')">6</button>
+      <button class="operator" onclick="appendToDisplay('*')">×</button>
+      
+      <button class="number" onclick="appendToDisplay('1')">1</button>
+      <button class="number" onclick="appendToDisplay('2')">2</button>
+      <button class="number" onclick="appendToDisplay('3')">3</button>
+      <button class="operator" onclick="appendToDisplay('-')">-</button>
+      
+      <button class="number" onclick="appendToDisplay('0')">0</button>
+      <button id="decimal" onclick="appendToDisplay('.')">.</button>
+      <button id="clear" onclick="clearDisplay()">C</button>
+      <button class="operator" onclick="appendToDisplay('+')">+</button>
+      
+      <button id="equals" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    let display = document.getElementById("display");
+    
+    function appendToDisplay(value) {
+      display.value += value;
+    }
+    
+    function clearDisplay() {
+      display.value = "";
+    }
+    
+    function calculate() {
+      try {
+        // Replace × and ÷ with * and / for eval()
+        let expression = display.value.replace(/×/g, '*').replace(/÷/g, '/');
+        display.value = eval(expression);
+      } catch {
+        display.value = "Error";
+      }
+    }
+  </script>
+</body>
+</html>
