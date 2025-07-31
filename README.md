@@ -1,1 +1,2 @@
 # sigmaposting.github.io
+setting up this thing with the dns config gotta be the most painful experiences i've ever had.
