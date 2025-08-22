@@ -18,7 +18,7 @@
     }
   },
   "nongs": {
-    "exampleid1234567890": {
+    "abc123": {
       "name": "71c",
       "artist": "deadmau5",
       "startOffset": 0,
@@ -26,7 +26,7 @@
       "songs": [621134],
       "verifiedLevelIDs": [116248139]
     },
-    "exampleid0987654321": {
+    "abc124": {
       "name": "Last Duty",
       "artist": "Nhato",
       "startOffset": 0,
@@ -36,3 +36,4 @@
     }
   }
 }
+
