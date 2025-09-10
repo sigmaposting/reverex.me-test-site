@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: auto;
+    padding: auto;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: burlywood;
+    font-size: larger;
+}
+h1 {
+    color: darkblue;
+    text-align: center;
+    font-family: Gilroy, sans-serif;
+    margin: 5px;
+    padding: 5px;
+}
+.div1{
+    font-family: comic sans ms, sans-serif;
+    color: black;
+    background-color: lightgrey;
+    margin: 0;
+    padding: 0;
+}
+.textcontainer{
+    margin: 12px;
+}
